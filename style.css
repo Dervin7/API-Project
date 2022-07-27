@@ -1,3 +1,31 @@
 body {
     background-image: url(./assets/professer_oak.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h3 {
+    float: left;
+    margin: 7px;
+    padding: 7px;
+}
+
+p {
+    float: left;
+    margin: 5px;
+}
+
+.HeadInfo {
+    border: solid 7px black;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+#container {
+    background-image: url(./assets/text-bubble.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    left: 47em;
+    top: 35em;
 }
