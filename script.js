@@ -1,11 +1,11 @@
 const baseURL ="https://pokeapi.co/api/v2/pokemon/"
-const containerDiv = document.getElementById("container")
-const searchDiv = document.getElementById("searchContainer")
+const containerDiv = document.getElementById(`container`)
+const searchDiv = document.getElementById(`searchContainer`)
 
-const getPokeResults = (event) => {
-    event.preventDefault();
+const getPokeResults = (e) => {
+    e.preventDefault();
     const searchInput = document.getElementById("search").value;
-    console.log("Search Input ${searchInput}");
+    console.log(`Search Input ${searchInput}`);
     fetch(`https://pokeapi.co/api/v2/pokemon/${searchInput}`)
     .then(res => res.json())
     .then(data => {
@@ -18,7 +18,7 @@ const getPokeResults = (event) => {
             searchDiv.appendChild(errorMessage)
         } else {
             searchDiv.innerHTML = ""
-            diplayData(data);
+            displayData(data);
         }
     })
 
@@ -28,7 +28,7 @@ const getPokeResults = (event) => {
 function displayData(pokemon) {
     console.log(pokemon.species.name)
     const PokemonDiv = document.createElement("div")
-    const PokemonName = documnet.createElement("h2")
+    const PokemonName = document.createElement("h2")
     PokemonName.textContent = pokemon.species.name;
     PokemonDiv.appendChild(PokemonName)
 
@@ -71,6 +71,8 @@ function displayData(pokemon) {
             default:
                 break;
         }
+
+        PokemonDiv.appendChild(PokemonTypes)
 
         containerDiv.appendChild(PokemonDiv)
 }
