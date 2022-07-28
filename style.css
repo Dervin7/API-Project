@@ -6,13 +6,17 @@ body {
 
 h3 {
     float: left;
-    margin: 7px;
-    padding: 7px;
+    position: relative;
+    left: 40em;
+    margin: 10px;
+    top: 1em;
 }
 
 p {
     float: left;
-    margin: 5px;
+    position: relative;
+    top: 2em;
+    left: 50px;
 }
 
 .HeadInfo {
@@ -21,11 +25,26 @@ p {
     font-family: sans-serif;
 }
 
+h4 {
+    position: relative;
+    left: 40em;
+    top: 1em;
+    font-size: x-large;
+} 
+
+img {
+    bottom: 3em;
+    position: relative;
+    right: .75em;
+}
+
 #container {
     background-image: url(./assets/text-bubble.png);
     background-repeat: no-repeat;
-    background-size: contain;
-    position: relative;
-    left: 47em;
-    top: 35em;
+    background-size: 45% 100%;
+    background-position: center;
+    /* left: 25em;
+    top: 35em; */
+    margin: auto;
+    margin-top: 35em;
 }
