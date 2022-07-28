@@ -1,7 +1,7 @@
 const baseURL ="https://pokeapi.co/api/v2/pokemon/"
 const containerDiv = document.getElementById(`container`)
 const searchDiv = document.getElementById(`searchContainer`)
-const PokemonDiv = null;
+let PokemonDiv = null;
 
 const getPokeResults = (e) => {
     e.preventDefault();
@@ -12,17 +12,17 @@ const getPokeResults = (e) => {
     .then(data => {
         if (data.error) {
             const errorMessage = document.createElement("h2")
-
+            
             errorMessage.textContent = data.error
             errorMessage.style.color = "red"
-
+            
             searchDiv.appendChild(errorMessage)
         } else {
             searchDiv.innerHTML = ""
             displayData(data);
         }
     })
-
+    
     searchInput.value = ""
 }
 
@@ -32,7 +32,7 @@ function displayData(pokemon) {
         containerDiv.removeChild(PokemonDiv)
     } else {null}
 
-    const PokemonDiv = document.createElement("div")
+    PokemonDiv = document.createElement("div")
     const PokemonName = document.createElement("h4")
     PokemonName.textContent = pokemon.species.name;
     PokemonDiv.appendChild(PokemonName)
